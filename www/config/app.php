@@ -140,9 +140,9 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        FindMeABike\Providers\AppServiceProvider::class,
+        FindMeABike\Providers\EventServiceProvider::class,
+        FindMeABike\Providers\RouteServiceProvider::class,
 
 		/**
 		 * Custom/Third party

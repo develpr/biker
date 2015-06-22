@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace FindMeABike\Jobs;
 
 use Illuminate\Bus\Queueable;
 

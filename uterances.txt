@@ -1,0 +1,49 @@
+GetMyLocationStatus How many bikes are available
+GetMyLocationStatus Are there any bikes available
+GetMyLocationStatus Bikes available
+GetMyLocationStatus Number of bikes available
+GetMyLocationStatus What is the number of available bikes at my location
+GetMyLocationStatus I would like to ride a bike
+GetMyLocationStatus I'd like to ride a bike
+GetMyLocationStatus bike count
+GetMyLocationStatus how many bikes
+GetMyLocationStatus any bikes available
+
+GetMyLocationStatus How many spaces are available
+GetMyLocationStatus are there any spaces available
+GetMyLocationStatus spaces available
+GetMyLocationStatus Number of spaces available
+GetMyLocationStatus What is the number of available spaces at my location
+GetMyLocationStatus space count
+GetMyLocationStatus how many spaces
+GetMyLocationStatus I would like to park my bike
+GetMyLocationStatus Can I park my bike
+GetMyLocationStatus any parking available
+GetMyLocationStatus any open spaces available
+GetMyLocationStatus any openings
+GetMyLocationStatus any holes
+
+SetMyLocationById Set my location to id {one|Id}
+SetMyLocationById Set my location to id {two|Id}
+SetMyLocationById Set my location to id {four hundred and ten|Id}
+SetMyLocationById Set my location to id {four hundred ten|Id}
+SetMyLocationById My location id is {one|Id}
+SetMyLocationById My location id is {two|Id}
+SetMyLocationById My location id is {four hundred and ten|Id}
+SetMyLocationById My location id is {four hundred ten|Id}
+
+GetSpecificLocationStatusById what is the status of location id {one|Id}
+GetSpecificLocationStatusById what is the situation at location id {one|Id}
+GetSpecificLocationStatusById how many bikes are available at station id {one|Id}
+GetSpecificLocationStatusById station {one|Id} status please
+GetSpecificLocationStatusById station {one|Id} status
+GetSpecificLocationStatusById station {one|Id} situation
+GetSpecificLocationStatusById bikes at station id {one|Id}
+GetSpecificLocationStatusById spaces at station id {one|Id}
+
+GetSpecificLocationStatusByLocation bikes available at {Howard and Kedzie|Location}
+GetSpecificLocationStatusByLocation bikes available at {Rogers Plaza|Location}
+GetSpecificLocationStatusByLocation bikes available at {Chicago Bean|Location}
+GetSpecificLocationStatusByLocation bikes available at {Fifteen ten alice street|Location}
+
+

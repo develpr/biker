@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace FindMeABike\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

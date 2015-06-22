@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace FindMeABike\Http\Controllers\Auth;
 
-use App\User;
+use FindMeABike\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use FindMeABike\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller

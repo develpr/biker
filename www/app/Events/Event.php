@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace FindMeABike\Events;
 
 abstract class Event
 {

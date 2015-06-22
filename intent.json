@@ -1,9 +1,44 @@
 {
-    "intents": [
-        {
-            "intent" : "GetAntiJoke",
-            "slots": [
-            ]
-        }
-    ]
+	"intents": [
+		{
+			"intent": "GetSpecificLocationStatusByLocation",
+			"slots": [
+				{
+					"name": "Location",
+					"type": "LITERAL"
+				}
+			]
+		},
+		{
+			"intent": "GetSpecificLocationStatusById",
+			"slots": [
+				{
+					"name": "Id",
+					"type": "NUMBER"
+				}
+			]
+		},
+		{
+			"intent": "SetMyLocationByLocation",
+			"slots": [
+				{
+					"name": "Location",
+					"type": "LITERAL"
+				}
+			]
+		},
+		{
+			"intent": "SetMyLocationById",
+			"slots": [
+				{
+					"name": "Id",
+					"type": "NUMBER"
+				}
+			]
+		},
+		{
+			"intent": "GetMyLocationStatus",
+			"slots": []
+		}
+	]
 }

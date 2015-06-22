@@ -35,7 +35,7 @@ return [
 	 | @see https://developer.amazon.com/public/solutions/devices/echo/alexa-app-kit/docs/handling-requests-sent-by-the-alexa-service
 	 |
 	 */
-	'applicationIds' => env('ALEXA__APPLICATION_IDS', []),
+	'applicationIds' => env('ALEXA__APPLICATION_IDS', ['amzn1.echo-sdk-ams.app.61c03a4a-b537-4c91-b1c3-dad771abc1c4']),
 
 
 	/*
