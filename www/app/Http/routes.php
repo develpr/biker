@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
+	/** @var \FindMeABike\Services\Data\DivvyImporter $importer */
+	$importer = $this->app->make('\FindMeABike\Services\Data\DivvyImporter');
+	$importer->refreshData();
     return view('welcome');
 });
+
+AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'FindMeABike\Http\Controllers\FindMeABike@findById');
+
+AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'FindMeABike\Http\Controllers\FindMeABike@findByLocation');
+
+AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'FindMeABike\Http\Controllers\FindMeABike@myLocationStatus');

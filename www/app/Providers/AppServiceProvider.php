@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+	private $simpleBindings = [
+			\FindMeABike\Contracts\Repositories\DivvyStationRepository::class => \FindMeABike\Repositories\EloquentDivvyStationRepository::class
+	];
     /**
      * Bootstrap any application services.
      *
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+		foreach ($this->simpleBindings as $contract => $service) {
+			$this->app->bind($contract, $service);
+		}
     }
 }
