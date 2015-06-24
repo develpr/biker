@@ -1,6 +1,6 @@
 <?php  namespace FindMeABike\Contracts\Repositories;
 
-use FindMeABike\Domain\Divvy\Station;
+use FindMeABike\Contracts\Station;
 
 interface DivvyStationRepository {
 

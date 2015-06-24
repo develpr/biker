@@ -62,7 +62,7 @@ class DivvyImporter {
 	 * @return bool
 	 */
 	public function oldData(){
-		$threshold = intval($this->config->get('app.divvy.data_age_threshold'));
+		$threshold = intval($this->config->get('findmeabike.data_age_threshold'));
 		$age = $this->redis->get(self::LAST_RETRIEVED_REDIS_KEY);
 
 		return($threshold === 0 ||  (time() - $age) > $threshold );

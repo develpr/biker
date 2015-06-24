@@ -2,6 +2,7 @@
 
 
 use FindMeABike\Contracts\Station;
+use FindMeABike\Device;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -34,7 +35,15 @@ class EloquentStation extends Model implements Station {
 	}
 
 	public function scopeActive($query){
-		return $query->where('test_statoin', false);
+		return $query->where('test_station', false);
+	}
+
+	public function device(){
+		return $this->hasMany(Device::class);
+	}
+
+	public function getFullSpokenStatus(){
+		return "The " . $this->getSpokenName() . " station has " . $this->availableBikes() . " bikes available and " . $this->availableDocks() . " open docks.";
 	}
 
 

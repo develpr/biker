@@ -12,10 +12,11 @@ class CreateAlexaDevicesTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('alexa_devices', function($table)
+        Schema::create('alexa_devices', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('device_user_id');
+			$table->integer('station_id');
             $table->timestamps();
         });
 	}

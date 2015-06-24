@@ -12,9 +12,8 @@
 */
 
 Route::get('/', function () {
-	/** @var \FindMeABike\Services\Data\DivvyImporter $importer */
-	$importer = $this->app->make('\FindMeABike\Services\Data\DivvyImporter');
-	$importer->refreshData();
+	$geocodingService = $this->app->make(\FindMeABike\Contracts\GeocodingService::class);
+	$result = $geocodingService->geocode('Shedds Aquarium');
     return view('welcome');
 });
 
@@ -23,3 +22,7 @@ AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'FindMeABike\Http\
 AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'FindMeABike\Http\Controllers\FindMeABike@findByLocation');
 
 AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'FindMeABike\Http\Controllers\FindMeABike@myLocationStatus');
+
+AlexaRoute::intent('/alexa', 'SetMyLocationById', 'FindMeABike\Http\Controllers\FindMeABike@setLocationId');
+
+AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'FindMeABike\Http\Controllers\FindMeABike@setByLocation');

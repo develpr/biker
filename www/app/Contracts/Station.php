@@ -11,4 +11,6 @@ interface Station {
 
 	public function getSpokenName();
 
+	public function getFullSpokenStatus();
+
 } 

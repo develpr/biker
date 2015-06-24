@@ -203,11 +203,4 @@ return [
 
     ],
 
-	'divvy' => [
-		'data_age_threshold' => 30,
-		'data_source_uri' => 'http://findmeabike.dev/divvy_json.json',
-//		'data_source_uri' => 'http://www.divvybikes.com/stations/json',
-
-	],
-
 ];

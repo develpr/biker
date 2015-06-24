@@ -1,6 +1,7 @@
 <?php namespace FindMeABike;
 
 use Develpr\AlexaApp\Contracts\AmazonEchoDevice;
+use FindMeABike\Domain\Divvy\EloquentStation;
 use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model implements AmazonEchoDevice{
@@ -17,6 +18,10 @@ class Device extends Model implements AmazonEchoDevice{
 	public function setDeviceId($deviceId)
 	{
 		$this->attributes['device_user_id'] = $deviceId;
+	}
+
+	public function station(){
+		return $this->belongsTo(EloquentStation::class);
 	}
 
 } 

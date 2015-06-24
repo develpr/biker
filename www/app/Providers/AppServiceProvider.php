@@ -7,7 +7,8 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
 	private $simpleBindings = [
-			\FindMeABike\Contracts\Repositories\DivvyStationRepository::class => \FindMeABike\Repositories\EloquentDivvyStationRepository::class
+		\FindMeABike\Contracts\Repositories\DivvyStationRepository::class => \FindMeABike\Repositories\EloquentDivvyStationRepository::class,
+		\FindMeABike\Contracts\GeocodingService::class => \FindMeABike\Services\Data\GoogleGeocodingService::class,
 	];
     /**
      * Bootstrap any application services.

@@ -3,7 +3,7 @@
 use FindMeABike\Domain\DataContainer;
 use Illuminate\Database\Eloquent\Model;
 
-class Station extends DataContainer {
+class GenericStation extends DataContainer {
 
 	public function availableBikes(){
 		return intval($this->availableBikes);
@@ -15,6 +15,11 @@ class Station extends DataContainer {
 
 	public function totalDocks(){
 		return ($this->availableBikes() + $this->availableDocks());
+	}
+
+	public function getSpokenName()
+	{
+		return $this->station_name;
 	}
 
 }

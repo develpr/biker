@@ -19,7 +19,7 @@ class DivvyDataSource{
 	 */
 	public function getJson()
 	{
-		$sourceUrl = $this->config->get('app.divvy.data_source_uri');
+		$sourceUrl = $this->config->get('findmeabike.data_source_uri');
 
 		try{
 			$json = file_get_contents($sourceUrl);
