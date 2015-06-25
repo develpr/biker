@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://findmeabike.kevin.tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', '93as!f939jg59$%859fcrazymanzn!#9dfs(fj3w9f4Ferijgiesd#vsi'),
 
     'cipher' => 'AES-256-CBC',
 

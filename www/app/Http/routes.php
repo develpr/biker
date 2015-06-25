@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-	$geocodingService = $this->app->make(\FindMeABike\Contracts\GeocodingService::class);
-	$result = $geocodingService->geocode('Shedds Aquarium');
-    return view('welcome');
+    return view('home');
 });
+
+AlexaRoute::launch('/alexa', 'FindMeABike\Http\Controllers\FindMeABike@handleLaunch');
+
+AlexaRoute::sessionEnded('/alexa', 'FindMeABike\Http\Controllers\FindMeABike@handleSessionEnded');
 
 AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'FindMeABike\Http\Controllers\FindMeABike@findById');
 
@@ -26,3 +28,27 @@ AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'FindMeABike\Http\Controller
 AlexaRoute::intent('/alexa', 'SetMyLocationById', 'FindMeABike\Http\Controllers\FindMeABike@setLocationId');
 
 AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'FindMeABike\Http\Controllers\FindMeABike@setByLocation');
+
+
+
+
+
+/**
+ *				AUTH
+ */
+// Authentication routes...
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('register', 'Auth\AuthController@getRegister');
+Route::post('register', 'Auth\AuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');

@@ -8,7 +8,12 @@ GetMyLocationStatus I'd like to ride a bike
 GetMyLocationStatus bike count
 GetMyLocationStatus how many bikes
 GetMyLocationStatus any bikes available
-
+GetMyLocationStatus How many spaces
+GetMyLocationStatus Home station status
+GetMyLocationStatus default location status
+GetMyLocationStatus what is my home station situation
+GetMyLocationStatus how many bikes are available at my home station
+GetMyLocationStatus how many spaces are available at my home station
 GetMyLocationStatus How many spaces are available
 GetMyLocationStatus are there any spaces available
 GetMyLocationStatus spaces available
@@ -22,6 +27,13 @@ GetMyLocationStatus any parking available
 GetMyLocationStatus any open spaces available
 GetMyLocationStatus any openings
 GetMyLocationStatus any holes
+GetMyLocationStatus if there are any bikes available
+GetMyLocationStatus if there are any spaces available
+GetMyLocationStatus if there is a bike available
+GetMyLocationStatus if there is a space available
+GetMyLocationStatus how makes bikes area available
+GetMyLocationStatus how makes spaces area available
+
 
 SetMyLocationById Set my location to id {one|Id}
 SetMyLocationById Set my location to id {two|Id}
@@ -31,6 +43,14 @@ SetMyLocationById My location id is {one|Id}
 SetMyLocationById My location id is {two|Id}
 SetMyLocationById My location id is {four hundred and ten|Id}
 SetMyLocationById My location id is {four hundred ten|Id}
+SetMyLocationById configure my station id to {one|Id}
+SetMyLocationById configure my station id to {two|Id}
+SetMyLocationById configure my station id to {three|Id}
+SetMyLocationById set my station to id {three|Id}
+SetMyLocationById set my station to id {one|Id}
+SetMyLocationById setup my station id to {one|Id}
+SetMyLocationById set my home station id to {one|Id}
+SetMyLocationById set my station id to {one|Id}
 
 GetSpecificLocationStatusById what is the status of location id {one|Id}
 GetSpecificLocationStatusById what is the situation at location id {one|Id}
@@ -41,9 +61,14 @@ GetSpecificLocationStatusById station {one|Id} situation
 GetSpecificLocationStatusById bikes at station id {one|Id}
 GetSpecificLocationStatusById spaces at station id {one|Id}
 
+GetSpecificLocationStatusByLocation if bikes are available at {Howard and Kedzie|Location}
+GetSpecificLocationStatusByLocation if a bike is available at {Howard and Kedzie|Location}
 GetSpecificLocationStatusByLocation bikes available at {Howard and Kedzie|Location}
 GetSpecificLocationStatusByLocation bikes available at {Rogers Plaza|Location}
 GetSpecificLocationStatusByLocation bikes available at {Chicago Bean|Location}
 GetSpecificLocationStatusByLocation bikes available at {Fifteen ten alice street|Location}
+GetSpecificLocationStatusByLocation bikes available at {2423 North Amber Street|Location}
+GetSpecificLocationStatusByLocation spaces available at {2423 North Amber Street|Location}
+GetSpecificLocationStatusByLocation parking spaces available at {2423 North Amber Street|Location}
 
 

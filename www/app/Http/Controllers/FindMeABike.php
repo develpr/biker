@@ -26,12 +26,30 @@ class FindMeABike extends  BaseController{
 		$this->geocodingService = $geocodingService;
 	}
 
+	/**
+	 * Handle the launch event for the app
+	 */
+	public function handleLaunch(){
+		$device = $this->retrieveOrCreateDevice();
+		if( $device->station ){
+			return Alexa::say("Welcome to Bike Finder. You can get information for your home station, or find information about a different bike station. What would you like to do?");
+		}
+		return Alexa::say("Welcome to Bike Finder. You can get information about a station using a location or ID, or setup your home station. What would you like to do?");
+	}
+
+	/**
+	 * Handle the launch event for the app
+	 */
+	public function handleSessionEnded(){
+		return Alexa::say("Goodbye")->endSession();
+	}
+
 	public function findByLocation(){
 
 		$station = $this->findStationFromLocation();
 
 		if( ! $station ){
-			return Alexa::say("I can't find a station near that location. Try providing a street intersection or popular location.");
+			return Alexa::say("I can't find a station near that location. You could try providing a different street intersection or popular destination.");
 		}
 
 		return Alexa::say("The nearest I could find is the " . $station->getSpokenName() . " station which is " . $this->getSpokenDistance($station->distance) . " away and has " . $station->availableBikes() . " available bikes and " . $station->availableDocks() . " docks available.")->endSession();
@@ -42,7 +60,7 @@ class FindMeABike extends  BaseController{
 		$device = $this->retrieveOrCreateDevice();
 
 		if( ! $station ){
-			return Alexa::say("I can't find a station near that location. Try providing a street intersection or popular location.");
+			return Alexa::say("I can't find a station near that location. You could try providing a different street intersection, address, or popular destination.");
 		}
 		else{
 			$device->station()->associate($station);

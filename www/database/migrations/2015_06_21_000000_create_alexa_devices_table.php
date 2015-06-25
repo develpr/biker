@@ -16,6 +16,7 @@ class CreateAlexaDevicesTable extends Migration {
         {
             $table->increments('id');
             $table->string('device_user_id');
+			$table->integer('user_id');
 			$table->integer('station_id');
             $table->timestamps();
         });
