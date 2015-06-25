@@ -16,8 +16,9 @@ class CreateAlexaDevicesTable extends Migration {
         {
             $table->increments('id');
             $table->string('device_user_id');
-			$table->integer('user_id');
-			$table->integer('station_id');
+			$table->integer('user_id')->nullable();
+			$table->integer('station_id')->nullable();
+			$table->string('device_code')->nullable(); //the code that can be used to tie a device to an account
             $table->timestamps();
         });
 	}

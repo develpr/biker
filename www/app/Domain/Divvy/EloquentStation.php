@@ -46,5 +46,4 @@ class EloquentStation extends Model implements Station {
 		return "The " . $this->getSpokenName() . " station has " . $this->availableBikes() . " bikes available and " . $this->availableDocks() . " open docks.";
 	}
 
-
 } 

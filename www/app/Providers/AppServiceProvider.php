@@ -2,6 +2,7 @@
 
 namespace FindMeABike\Providers;
 
+use FindMeABike\Device;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerEloquentListeners();
     }
 
     /**
@@ -31,4 +32,12 @@ class AppServiceProvider extends ServiceProvider
 			$this->app->bind($contract, $service);
 		}
     }
+
+	private function registerEloquentListeners()
+	{
+		Device::creating(function (Device $device) {
+			$device->generateDeviceCode();
+			return true;
+		});
+	}
 }

@@ -27,7 +27,7 @@
 		</div>
 		<div class="six columns">
 			<label for="device_code" class="optional">device code</label>
-			<input class="u-full-width" type="text" id="device_code" name="device_code">
+			<input class="u-full-width" type="text" id="device_code" name="device_code" placeholder="A7C9G2B0">
 		</div>
 	</div>
 	<button class="button-primary" type="submit">

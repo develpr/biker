@@ -24,4 +24,9 @@ class Device extends Model implements AmazonEchoDevice{
 		return $this->belongsTo(EloquentStation::class);
 	}
 
+	public function generateDeviceCode()
+	{
+		$this->device_code = "" . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9);
+	}
+
 } 
