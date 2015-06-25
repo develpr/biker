@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="twelve columns">
 			<p>
-				Login with your email and password. If you've forgotten your password, you can <a href="{{url('/rest')}}">reset your password here.</a>
+				Login with your email and password. If you've forgotten your password, you can <a href="{{url('/reset')}}">reset your password here.</a>
 			</p>
 		</div>
 	</div>

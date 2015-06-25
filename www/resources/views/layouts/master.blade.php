@@ -22,7 +22,7 @@
 
 <body id="home">
 	<div id="header-container">
-		<header class="container">
+		<header class="container" id="header">
 			<h1 class="row"><a href="/">Alexa, Find Me a <img src="/img/bike_basket.svg" class="bike-icon" alt="An Old Bike" /></a></h1>
 			<ul class="row navigation">
 				<li><a href="/">About</a></li>
@@ -38,14 +38,16 @@
 	<div class="container" id="content">
 		@yield('content')
 	</div>
-	<div class="container" id="footer">
-		<ul class="row">
-			<li class="three columns"><a href="mailto:kevin@develpr.com">Contact</a></li>
-			<li class="three columns"><a href="/privacy-policy">Privacy Policy</a></li>
-			<li class="three columns"><a href="https://www.github.com/develpr/alexa-app">alexa-app</a></li>
-			<li class="three columns"><a href="http://www.develpr.com">Hire me!</a></li>
-		</ul>
-	</div>
+	<footer>
+		<div class="container" id="footer-container">
+			<ul class="row">
+				<li class="three columns"><a href="mailto:kevin@develpr.com">Contact</a></li>
+				<li class="three columns"><a href="/privacy-policy">Privacy Policy</a></li>
+				<li class="three columns"><a href="https://www.github.com/develpr/alexa-app">alexa-app</a></li>
+				<li class="three columns"><a href="http://www.develpr.com">Hire me!</a></li>
+			</ul>
+		</div>
+	</footer>
 
 </body>
 </html>

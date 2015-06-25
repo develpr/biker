@@ -10,7 +10,7 @@
 			<input class="u-full-width" value="{{ old('email') }}" type="email" placeholder="your@email.com" name="email" id="email">
 		</div>
 	</div>
-	<div class="row"
+	<div class="row">
 		<div class="six columns required">
 			<label for="password">password</label>
 			<input class="u-full-width" type="password" id="password" name="password">
@@ -30,10 +30,6 @@
 			<input class="u-full-width" type="text" id="device_code" name="device_code">
 		</div>
 	</div>
-	<label>
-		<input type="checkbox">
-		<span class="label-body">remember me</span>
-	</label>
 	<button class="button-primary" type="submit">
 		Register
 	</button>

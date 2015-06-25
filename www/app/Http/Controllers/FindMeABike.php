@@ -63,7 +63,7 @@ class FindMeABike extends  BaseController{
 			return Alexa::say("I can't find a station near that location. You could try providing a different street intersection, address, or popular destination.");
 		}
 		else{
-			$device->station()->associate($station);
+			$device->station()->associate($station)->save();
 			return Alexa::say("I found the " . $station->getSpokenName() . " station which is " . $this->getSpokenDistance($station->distance) . " away and set it as your home station.");
 		}
 	}
@@ -114,7 +114,7 @@ class FindMeABike extends  BaseController{
 			return Alexa::say("I can't find a station with that ID. Try again, or use the station location instead.");
 		}
 		else{
-			$device->station()->associate($station);
+			$device->station()->associate($station)->save();
 			return Alexa::say("I've set the " . $station->getSpokenName() . " station as your home station.");
 		}
 	}
