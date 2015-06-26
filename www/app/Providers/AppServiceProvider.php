@@ -2,9 +2,11 @@
 
 namespace FindMeABike\Providers;
 
+use App;
 use FindMeABike\Device;
 use Illuminate\Support\ServiceProvider;
 use Validator;
+use Response;
 use FindMeABike\Validators\DeviceCodeValidator;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerEloquentListeners();
 		$this->registerValidators();
+		$this->registerErrorHandlers();
     }
 
     /**
@@ -35,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
 			$this->app->bind($contract, $service);
 		}
     }
+
+	private function registerErrorHandlers(){
+	}
 
 	private function registerEloquentListeners()
 	{
