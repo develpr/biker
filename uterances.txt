@@ -8,7 +8,6 @@ GetMyLocationStatus I'd like to ride a bike
 GetMyLocationStatus bike count
 GetMyLocationStatus how many bikes
 GetMyLocationStatus any bikes available
-GetMyLocationStatus How many spaces
 GetMyLocationStatus Home station status
 GetMyLocationStatus default location status
 GetMyLocationStatus what is my home station situation
@@ -67,8 +66,62 @@ GetSpecificLocationStatusByLocation bikes available at {Howard and Kedzie|Locati
 GetSpecificLocationStatusByLocation bikes available at {Rogers Plaza|Location}
 GetSpecificLocationStatusByLocation bikes available at {Chicago Bean|Location}
 GetSpecificLocationStatusByLocation bikes available at {Fifteen ten alice street|Location}
-GetSpecificLocationStatusByLocation bikes available at {2423 North Amber Street|Location}
-GetSpecificLocationStatusByLocation spaces available at {2423 North Amber Street|Location}
-GetSpecificLocationStatusByLocation parking spaces available at {2423 North Amber Street|Location}
+GetSpecificLocationStatusByLocation bikes available at {two four two three North Amber Street|Location}
+GetSpecificLocationStatusByLocation spaces available at {one five nineteen North Amber Street|Location}
+GetSpecificLocationStatusByLocation parking spaces available at {seventeen twenty three North Amber Street|Location}
+
+GetMyDeviceCode what is my device code
+GetMyDeviceCode tell me my device code
+GetMyDeviceCode setup my device
+GetMyDeviceCode set up my account
+GetMyDeviceCode setup my account
+GetMyDeviceCode retrieve device code
+GetMyDeviceCode what's my device
+GetMyDeviceCode associate device
+GetMyDeviceCode account setup
+GetMyDeviceCode device association
+
+
+ResetMyDeviceCode reset my device code
+ResetMyDeviceCode give me a new device code
+ResetMyDeviceCode reset my web access code
+ResetMyDeviceCode generate a new device identifier
+ResetMyDeviceCode new device code
+ResetMyDeviceCode regenerate device code
+ResetMyDeviceCode new device identifier
+ResetMyDeviceCode reset device identifier
+ResetMyDeviceCode reset my device identifier
+ResetMyDeviceCode to reset my device code
+ResetMyDeviceCode to reset my device identifier
+
+ResetAccount reset my account
+ResetAccount clear my account
+ResetAccount un-pair my account
+ResetAccount remove account
+ResetAccount disassociate my account
+ResetAccount disconnect my device from my account
+ResetAccount reset device account
+ResetAccount remove web account
+ResetAccount disconnect web account
+ResetAccount reset web account
+
+PromptResponse {yes|Response}
+PromptResponse {no|Response}
+PromptResponse {no thank you|Response}
+PromptResponse {yes please|Response}
+
+PromptResponse {one|Response}
+PromptResponse {one two|Response}
+PromptResponse {one two three|Response}
+PromptResponse {one two three four|Response}
+PromptResponse {one two three four five|Response}
+PromptResponse {one two three four five six|Response}
+PromptResponse {one two three four five six seven|Response}
+PromptResponse {one two three four five six seven eight|Response}
+PromptResponse {one two three four five six seven eight nine|Response}
+PromptResponse {one two three four five six seven eight nine ten|Response}
+PromptResponse {one two three four five six seven eight nine ten eleven|Response}
+PromptResponse {one two three four five six seven eight nine ten eleven twelve|Response}
+PromptResponse {one two three four five six seven eight nine ten eleven twelve thirteen|Response}
 
 

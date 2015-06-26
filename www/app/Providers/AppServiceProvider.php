@@ -4,6 +4,8 @@ namespace FindMeABike\Providers;
 
 use FindMeABike\Device;
 use Illuminate\Support\ServiceProvider;
+use Validator;
+use FindMeABike\Validators\DeviceCodeValidator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerEloquentListeners();
+		$this->registerValidators();
     }
 
     /**
@@ -39,5 +42,10 @@ class AppServiceProvider extends ServiceProvider
 			$device->generateDeviceCode();
 			return true;
 		});
+	}
+
+	private function registerValidators()
+	{
+		Validator::extend('device_code', DeviceCodeValidator::class . '@validate');
 	}
 }

@@ -134,6 +134,31 @@ class FindMeABike extends  BaseController{
 		return $device;
 	}
 
+	public function getDeviceCode(){
+		$device = $this->retrieveOrCreateDevice();
+
+		return Alexa::say("Your device's code for web registration is " . $this->getSpokenDeviceCode($device->device_code) . '. You reset this code at any time by saying, "reset my device code."')->endSession();
+	}
+
+	public function resetDeviceCode(){
+		$device = $this->retrieveOrCreateDevice();
+		$device->generateDeviceCode()->save();
+		return Alexa::say("The code for you device has been reset and is now " . $this->getSpokenDeviceCode($device->device_code) . '.')->endSession();
+	}
+
+	public function detachAccount(){
+		$device = $this->retrieveOrCreateDevice();
+
+		if(! $device->station ){
+			return Alexa::say("There is no user account associated with this device currently")->endSession();
+		}
+		else{
+			return Alexa::ask("Are you sure you want to disconnect this device from it's web account?");
+		}
+
+	}
+
+
 	private function getSpokenDistance($decimalMiles){
 
 		if($decimalMiles >= .25){
@@ -159,6 +184,19 @@ class FindMeABike extends  BaseController{
 
 	private function roundUpToAny($n,$x=25) {
 		return (round($n)%$x === 0) ? round($n) : round(($n+$x/2)/$x)*$x;
+	}
+
+	/**
+	 * Adds pauses between characters of device code for better speech output
+	 * @param string $deviceCode
+	 * @return string
+	 */
+	private function getSpokenDeviceCode($deviceCode){
+		$spoken = '';
+		foreach(str_split($deviceCode) as $codeCharacter){
+			$spoken .= $codeCharacter . '<break time = "750ms"/>';
+		}
+		return $spoken;
 	}
 
 } 

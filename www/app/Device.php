@@ -4,6 +4,12 @@ use Develpr\AlexaApp\Contracts\AmazonEchoDevice;
 use FindMeABike\Domain\Divvy\EloquentStation;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Device
+ * @package FindMeABike
+ * @property station EloquentStation | null;
+ * @property user User | null;
+ */
 class Device extends Model implements AmazonEchoDevice{
 
 	protected $table = "alexa_devices";
@@ -24,9 +30,21 @@ class Device extends Model implements AmazonEchoDevice{
 		return $this->belongsTo(EloquentStation::class);
 	}
 
+	public function user(){
+		return $this->belongsTo(User::class);
+	}
+
 	public function generateDeviceCode()
 	{
-		$this->device_code = "" . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9) . chr(65 + rand(0, 25)) . rand(0,9);
+		$deviceCodeLength = intval(config('findmeabike.web.device_code_length'));
+		$generatedDeviceCode = '';
+
+		for($i = 0; $i <= $deviceCodeLength; $i++){
+			$generatedDeviceCode .= ($i % 2 === 1) ? chr(65 + rand(0, 25)) :  rand(0,9);
+		}
+
+		$this->device_code = $generatedDeviceCode;
+		return $this;
 	}
 
 } 

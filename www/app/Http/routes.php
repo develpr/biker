@@ -29,6 +29,12 @@ AlexaRoute::intent('/alexa', 'SetMyLocationById', 'FindMeABike\Http\Controllers\
 
 AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'FindMeABike\Http\Controllers\FindMeABike@setByLocation');
 
+AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'FindMeABike\Http\Controllers\FindMeABike@getDeviceCode');
+
+AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'FindMeABike\Http\Controllers\FindMeABike@resetDeviceCode');
+
+AlexaRoute::intent('/alexa', 'ResetAccount', 'FindMeABike\Http\Controllers\FindMeABike@detachAccount');
+
 
 
 

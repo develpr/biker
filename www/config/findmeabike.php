@@ -13,6 +13,10 @@ return [
 		'google_base_url' => 'https://maps.googleapis.com/maps/api/geocode/json',
 		'google_maps_api_key' => env('GOOGLE_MAPS_API_KEY',''),
 		'default_local' => 'Chicago',
-	]
+	],
+
+	'web' => [
+		'device_code_length' => 8,
+	],
 ];
 

@@ -39,6 +39,27 @@
 		{
 			"intent": "GetMyLocationStatus",
 			"slots": []
+		},
+		{
+			"intent": "GetMyDeviceCode",
+			"slots": []
+		},
+		{
+			"intent": "ResetMyDeviceCode",
+			"slots": []
+		},
+		{
+			"intent": "ResetAccount",
+			"slots": []
+		},
+		{
+			"intent": "PromptResponse",
+			"slots": [
+				{
+					"name":"Response",
+					"type":"LITERAL"
+				}
+			]
 		}
 	]
 }
