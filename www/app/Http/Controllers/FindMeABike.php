@@ -1,5 +1,6 @@
 <?php  namespace FindMeABike\Http\Controllers;
 
+use Develpr\AlexaApp\Response\Card;
 use FindMeABike\Contracts\GeocodingService;
 use FindMeABike\Contracts\Repositories\DivvyStationRepository;
 use FindMeABike\Device;
@@ -137,25 +138,43 @@ class FindMeABike extends  BaseController{
 	public function getDeviceCode(){
 		$device = $this->retrieveOrCreateDevice();
 
-		return Alexa::say("Your device's code for web registration is " . $this->getSpokenDeviceCode($device->device_code) . '. You reset this code at any time by saying, "reset my device code."')->endSession();
+		return Alexa::say("Your device's code for web registration is " . $this->getSpokenDeviceCode($device->device_code) . '. You reset this code at any time by saying, "reset my device code."')
+			->withCard(new Card("Your Web Device Code", "", "Your code for web registration is " . $device->device_code))
+			->endSession();
 	}
 
 	public function resetDeviceCode(){
 		$device = $this->retrieveOrCreateDevice();
 		$device->generateDeviceCode()->save();
+
 		return Alexa::say("The code for you device has been reset and is now " . $this->getSpokenDeviceCode($device->device_code) . '.')->endSession();
 	}
 
 	public function detachAccount(){
 		$device = $this->retrieveOrCreateDevice();
 
-		if(! $device->station ){
+		if(! $device->user ){
 			return Alexa::say("There is no user account associated with this device currently")->endSession();
 		}
 		else{
-			return Alexa::ask("Are you sure you want to disconnect this device from it's web account?");
+			return Alexa::ask("Are you sure you want to disconnect this device from it's web account?")->sendResponseTo('ConfirmDetachAccount');
 		}
+	}
 
+	public function confirmDetachAccount(){
+		$response = strtolower(trim(Alexa::slot('PromptResponse')));
+
+		if($response == "yes" || $response == "sure" || $response === 1){
+			$device = $this->retrieveOrCreateDevice();
+			/** @var Device $device */
+			$device->user()->dissociate();
+			$device->generateDeviceCode();
+			$device->save();
+			return Alexa::say("Your device is no longer associated with a web account")->endSession();
+		}
+		else{
+			return Alexa::say("I'll leave things as they are.")->endSession();
+		}
 	}
 
 
@@ -194,7 +213,7 @@ class FindMeABike extends  BaseController{
 	private function getSpokenDeviceCode($deviceCode){
 		$spoken = '';
 		foreach(str_split($deviceCode) as $codeCharacter){
-			$spoken .= $codeCharacter . '<break time = "750ms"/>';
+			$spoken .= $codeCharacter . ', ';
 		}
 		return $spoken;
 	}

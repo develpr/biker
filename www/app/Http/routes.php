@@ -34,6 +34,7 @@ AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'FindMeABike\Http\Controllers\Fi
 AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'FindMeABike\Http\Controllers\FindMeABike@resetDeviceCode');
 
 AlexaRoute::intent('/alexa', 'ResetAccount', 'FindMeABike\Http\Controllers\FindMeABike@detachAccount');
+AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'FindMeABike\Http\Controllers\FindMeABike@confirmDetachAccount');
 
 
 
