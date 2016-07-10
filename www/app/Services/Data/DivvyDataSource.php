@@ -1,4 +1,4 @@
-<?php  namespace FindMeABike\Services\Data;
+<?php  namespace Biker\Services\Data;
 
 use Illuminate\Config\Repository as Config;
 
@@ -19,7 +19,7 @@ class DivvyDataSource{
 	 */
 	public function getJson()
 	{
-		$sourceUrl = $this->config->get('findmeabike.data_source_uri');
+		$sourceUrl = $this->config->get('biker.data_source_uri');
 
 		try{
 			$json = file_get_contents($sourceUrl);

@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        FindMeABike\Providers\AppServiceProvider::class,
-        FindMeABike\Providers\AuthServiceProvider::class,
-        FindMeABike\Providers\EventServiceProvider::class,
-        FindMeABike\Providers\RouteServiceProvider::class,
+        Biker\Providers\AppServiceProvider::class,
+        Biker\Providers\AuthServiceProvider::class,
+        Biker\Providers\EventServiceProvider::class,
+        Biker\Providers\RouteServiceProvider::class,
 
         Develpr\AlexaApp\Provider\LaravelServiceProvider::class,
 

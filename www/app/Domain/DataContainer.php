@@ -1,4 +1,4 @@
-<?php  namespace FindMeABike\Domain;
+<?php  namespace Biker\Domain;
 
 
 class DataContainer {

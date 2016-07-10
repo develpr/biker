@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Exceptions;
+namespace Biker\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

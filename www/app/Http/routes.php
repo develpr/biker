@@ -15,26 +15,26 @@ Route::get('/', function () {
     return view('home');
 });
 
-AlexaRoute::launch('/alexa', 'FindMeABike\Http\Controllers\FindMeABike@handleLaunch');
+AlexaRoute::launch('/alexa', 'Biker\Http\Controllers\Biker@handleLaunch');
 
-AlexaRoute::sessionEnded('/alexa', 'FindMeABike\Http\Controllers\FindMeABike@handleSessionEnded');
+AlexaRoute::sessionEnded('/alexa', 'Biker\Http\Controllers\Biker@handleSessionEnded');
 
-AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'FindMeABike\Http\Controllers\FindMeABike@findById');
+AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'Biker\Http\Controllers\Biker@findById');
 
-AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'FindMeABike\Http\Controllers\FindMeABike@findByLocation');
+AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'Biker\Http\Controllers\Biker@findByLocation');
 
-AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'FindMeABike\Http\Controllers\FindMeABike@myLocationStatus');
+AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'Biker\Http\Controllers\Biker@myLocationStatus');
 
-AlexaRoute::intent('/alexa', 'SetMyLocationById', 'FindMeABike\Http\Controllers\FindMeABike@setLocationId');
+AlexaRoute::intent('/alexa', 'SetMyLocationById', 'Biker\Http\Controllers\Biker@setLocationId');
 
-AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'FindMeABike\Http\Controllers\FindMeABike@setByLocation');
+AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'Biker\Http\Controllers\Biker@setByLocation');
 
-AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'FindMeABike\Http\Controllers\FindMeABike@getDeviceCode');
+AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'Biker\Http\Controllers\Biker@getDeviceCode');
 
-AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'FindMeABike\Http\Controllers\FindMeABike@resetDeviceCode');
+AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'Biker\Http\Controllers\Biker@resetDeviceCode');
 
-AlexaRoute::intent('/alexa', 'ResetAccount', 'FindMeABike\Http\Controllers\FindMeABike@detachAccount');
-AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'FindMeABike\Http\Controllers\FindMeABike@confirmDetachAccount');
+AlexaRoute::intent('/alexa', 'ResetAccount', 'Biker\Http\Controllers\Biker@detachAccount');
+AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'Biker\Http\Controllers\Biker@confirmDetachAccount');
 
 
 /**

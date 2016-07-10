@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Http\Middleware;
+namespace Biker\Http\Middleware;
 
 use Closure;
 use Illuminate\Redis\Database as Redis;

@@ -21,7 +21,7 @@
             "database"
         ],
         "psr-4": {
-            "FindMeABike\\": "app/"
+            "Biker\\": "app/"
         }
     },
     "autoload-dev": {

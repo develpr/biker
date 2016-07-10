@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Jobs;
+namespace Biker\Jobs;
 
 use Illuminate\Bus\Queueable;
 

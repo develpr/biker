@@ -1,13 +1,13 @@
-<?php  namespace FindMeABike\Domain\Divvy;
+<?php  namespace Biker\Domain\Divvy;
 
 
-use FindMeABike\Contracts\Station;
-use FindMeABike\Device;
+use Biker\Contracts\Station;
+use Biker\Device;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class EloquentStation
- * @package FindMeABike\Domain\Divvy
+ * @package Biker\Domain\Divvy
  *
  * @var int availableBikes
  * @var int availableDocks

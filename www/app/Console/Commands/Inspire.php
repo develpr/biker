@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Console\Commands;
+namespace Biker\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

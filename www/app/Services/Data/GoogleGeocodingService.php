@@ -1,6 +1,6 @@
-<?php  namespace FindMeABike\Services\Data;
+<?php  namespace Biker\Services\Data;
 
-use FindMeABike\Contracts\GeocodingService;
+use Biker\Contracts\GeocodingService;
 use Illuminate\Config\Repository as Config;
 
 class GoogleGeocodingService implements GeocodingService {
@@ -26,7 +26,7 @@ class GoogleGeocodingService implements GeocodingService {
 	{
 		//Get the default local - this is just a simple string that will be appending to narrow search results
 		if( ! $local )
-			$local = $this->config->get('findmeabike.geocoding.default_local');
+			$local = $this->config->get('biker.geocoding.default_local');
 
 		$googleGeocodeData = $this->fetchGoogleGeocode($location, $local);
 		$latLong = $this->extractLatAndLong($googleGeocodeData);
@@ -49,8 +49,8 @@ class GoogleGeocodingService implements GeocodingService {
 	}
 
 	private function buildGeocodeRequestUri($location, $local){
-		$uri = $this->config->get('findmeabike.geocoding.google_base_url');
-		$uri .= '?key=' . $this->config->get('findmeabike.geocoding.google_maps_api_key');
+		$uri = $this->config->get('biker.geocoding.google_base_url');
+		$uri .= '?key=' . $this->config->get('biker.geocoding.google_maps_api_key');
 		$uri .= '&address=' . urlencode($location);
 
 		if($local)

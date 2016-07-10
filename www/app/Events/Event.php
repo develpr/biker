@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Events;
+namespace Biker\Events;
 
 abstract class Event
 {

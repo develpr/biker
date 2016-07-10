@@ -1,6 +1,6 @@
-<?php  namespace FindMeABike\Domain\Divvy;
+<?php  namespace Biker\Domain\Divvy;
 
-use FindMeABike\Domain\DataContainer;
+use Biker\Domain\DataContainer;
 use Illuminate\Database\Eloquent\Model;
 
 class GenericStation extends DataContainer {

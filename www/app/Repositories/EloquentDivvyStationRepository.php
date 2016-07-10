@@ -1,14 +1,14 @@
-<?php  namespace FindMeABike\Repositories;
+<?php  namespace Biker\Repositories;
 
-use FindMeABike\Contracts\Repositories\DivvyStationRepository;
-use FindMeABike\Domain\Divvy\EloquentStation;
-use FindMeABike\Domain\Divvy\Station;
+use Biker\Contracts\Repositories\DivvyStationRepository;
+use Biker\Domain\Divvy\EloquentStation;
+use Biker\Domain\Divvy\Station;
 use Illuminate\Config\Repository as Config;
 
 class EloquentDivvyStationRepository implements DivvyStationRepository{
 
 	/**
-	 * @var \FindMeABike\Domain\Divvy\EloquentStation
+	 * @var \Biker\Domain\Divvy\EloquentStation
 	 */
 	private $station;
 	/**
@@ -49,7 +49,7 @@ class EloquentDivvyStationRepository implements DivvyStationRepository{
 	 */
 	public function findByCoordinates($latitude, $longitude)
 	{
-		$proximity = $this->config->get('findmeabike.station_proximity_limit_miles');
+		$proximity = $this->config->get('biker.station_proximity_limit_miles');
 		$nearbyStations = \DB::table('divvy_stations')
 			->select(\DB::raw('*, SQRT(POW(69.1 * (latitude - ' . $latitude . '), 2) + POW(69.1 * (' . $longitude . ' - longitude) * COS(latitude / 57.3), 2)) AS distance'))
 			->limit(1)

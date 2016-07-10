@@ -1,4 +1,4 @@
-<?php namespace FindMeABike\Contracts;
+<?php namespace Biker\Contracts;
 
 
 interface Station {

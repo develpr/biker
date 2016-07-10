@@ -1,6 +1,6 @@
-<?php  namespace FindMeABike\Services\Data;
+<?php  namespace Biker\Services\Data;
 
-use FindMeABike\Contracts\Repositories\DivvyStationRepository;
+use Biker\Contracts\Repositories\DivvyStationRepository;
 use Illuminate\Redis\Database as Redis;
 use Illuminate\Config\Repository as Config;
 
@@ -19,11 +19,11 @@ class DivvyImporter {
 	 */
 	private $config;
 	/**
-	 * @var \FindMeABike\Services\Data\DivvyDataSource
+	 * @var \Biker\Services\Data\DivvyDataSource
 	 */
 	private $divvyDataSource;
 	/**
-	 * @var \FindMeABike\Contracts\Repositories\DivvyStationRepository
+	 * @var \Biker\Contracts\Repositories\DivvyStationRepository
 	 */
 	private $stationRepository;
 
@@ -62,7 +62,7 @@ class DivvyImporter {
 	 * @return bool
 	 */
 	public function oldData(){
-		$threshold = intval($this->config->get('findmeabike.data_age_threshold'));
+		$threshold = intval($this->config->get('biker.data_age_threshold'));
 		$age = $this->redis->get(self::LAST_RETRIEVED_REDIS_KEY);
 
 		return($threshold === 0 ||  (time() - $age) > $threshold );

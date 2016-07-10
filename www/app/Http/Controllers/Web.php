@@ -1,4 +1,4 @@
-<?php  namespace FindMeABike\Http\Controllers;
+<?php  namespace Biker\Http\Controllers;
 
 class Web extends Controller{
 

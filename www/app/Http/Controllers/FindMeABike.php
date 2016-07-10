@@ -1,22 +1,22 @@
-<?php  namespace FindMeABike\Http\Controllers;
+<?php  namespace Biker\Http\Controllers;
 
 use Develpr\AlexaApp\Response\Card;
-use FindMeABike\Contracts\GeocodingService;
-use FindMeABike\Contracts\Repositories\DivvyStationRepository;
-use FindMeABike\Device;
-use FindMeABike\Contracts\Station;
-use FindMeABike\Services\Data\DivvyImporter;
+use Biker\Contracts\GeocodingService;
+use Biker\Contracts\Repositories\DivvyStationRepository;
+use Biker\Device;
+use Biker\Contracts\Station;
+use Biker\Services\Data\DivvyImporter;
 use Illuminate\Routing\Controller as BaseController;
 use \Alexa;
 
-class FindMeABike extends  BaseController{
+class Biker extends  BaseController{
 
 	/**
-	 * @var \FindMeABike\Contracts\Repositories\DivvyStationRepository
+	 * @var \Biker\Contracts\Repositories\DivvyStationRepository
 	 */
 	private $stationRepository;
 	/**
-	 * @var \FindMeABike\Contracts\GeocodingService
+	 * @var \Biker\Contracts\GeocodingService
 	 */
 	private $geocodingService;
 

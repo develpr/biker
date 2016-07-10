@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    FindMeABike\Http\Kernel::class
+    Biker\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    FindMeABike\Console\Kernel::class
+    Biker\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    FindMeABike\Exceptions\Handler::class
+    Biker\Exceptions\Handler::class
 );
 
 /*

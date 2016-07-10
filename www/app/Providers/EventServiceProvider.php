@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Providers;
+namespace Biker\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'FindMeABike\Events\SomeEvent' => [
-            'FindMeABike\Listeners\EventListener',
+        'Biker\Events\SomeEvent' => [
+            'Biker\Listeners\EventListener',
         ],
     ];
 

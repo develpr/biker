@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike;
+namespace Biker;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

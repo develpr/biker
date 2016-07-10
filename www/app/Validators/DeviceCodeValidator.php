@@ -1,12 +1,12 @@
-<?php  namespace FindMeABike\Validators;
+<?php  namespace Biker\Validators;
 
 
-use FindMeABike\Device;
+use Biker\Device;
 
 class DeviceCodeValidator {
 
 	/**
-	 * @var \FindMeABike\Device
+	 * @var \Biker\Device
 	 */
 	private $device;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Http\Middleware;
+namespace Biker\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

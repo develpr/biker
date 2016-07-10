@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Http\Requests;
+namespace Biker\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

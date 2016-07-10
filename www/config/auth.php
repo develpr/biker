@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => FindMeABike\User::class,
+            'model' => Biker\User::class,
         ],
 
         // 'users' => [

@@ -1,6 +1,6 @@
 <?php
 
-namespace FindMeABike\Providers;
+namespace Biker\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

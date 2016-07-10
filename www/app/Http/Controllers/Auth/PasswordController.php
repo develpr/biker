@@ -1,8 +1,8 @@
 <?php
 
-namespace FindMeABike\Http\Controllers\Auth;
+namespace Biker\Http\Controllers\Auth;
 
-use FindMeABike\Http\Controllers\Controller;
+use Biker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

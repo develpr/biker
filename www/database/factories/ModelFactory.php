@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(FindMeABike\User::class, function (Faker\Generator $faker) {
+$factory->define(Biker\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
