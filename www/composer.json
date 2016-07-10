@@ -21,8 +21,7 @@
             "database"
         ],
         "psr-4": {
-            "FindMeABike\\": "app/",
-            "Develpr\\AlexaApp\\" : "alexa-app/src/"
+            "FindMeABike\\": "app/"
         }
     },
     "autoload-dev": {
