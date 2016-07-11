@@ -5,7 +5,7 @@
 			"slots": [
 				{
 					"name": "Location",
-					"type": "LITERAL"
+					"type": "AMAZON.LITERAL"
 				}
 			]
 		},
@@ -14,7 +14,7 @@
 			"slots": [
 				{
 					"name": "Id",
-					"type": "NUMBER"
+					"type": "AMAZON.NUMBER"
 				}
 			]
 		},
@@ -23,7 +23,7 @@
 			"slots": [
 				{
 					"name": "Location",
-					"type": "LITERAL"
+					"type": "AMAZON.LITERAL"
 				}
 			]
 		},
@@ -32,7 +32,7 @@
 			"slots": [
 				{
 					"name": "Id",
-					"type": "NUMBER"
+					"type": "AMAZON.NUMBER"
 				}
 			]
 		},
@@ -57,7 +57,7 @@
 			"slots": [
 				{
 					"name":"Response",
-					"type":"LITERAL"
+					"type":"AMAZON.LITERAL"
 				}
 			]
 		}

@@ -1,8 +1,7 @@
 GetMyLocationStatus How many bikes are available
 GetMyLocationStatus Are there any bikes available
 GetMyLocationStatus Bikes available
-GetMyLocationStatus Number of bikes available
-GetMyLocationStatus What is the number of available bikes at my location
+GetMyLocationStatus Can I ride a bike
 GetMyLocationStatus I would like to ride a bike
 GetMyLocationStatus I'd like to ride a bike
 GetMyLocationStatus bike count
@@ -10,55 +9,49 @@ GetMyLocationStatus how many bikes
 GetMyLocationStatus any bikes available
 GetMyLocationStatus Home station status
 GetMyLocationStatus default location status
-GetMyLocationStatus what is my home station situation
-GetMyLocationStatus how many bikes are available at my home station
-GetMyLocationStatus how many spaces are available at my home station
 GetMyLocationStatus How many spaces are available
 GetMyLocationStatus are there any spaces available
 GetMyLocationStatus spaces available
 GetMyLocationStatus Number of spaces available
-GetMyLocationStatus What is the number of available spaces at my location
 GetMyLocationStatus space count
 GetMyLocationStatus how many spaces
-GetMyLocationStatus I would like to park my bike
 GetMyLocationStatus Can I park my bike
 GetMyLocationStatus any parking available
 GetMyLocationStatus any open spaces available
 GetMyLocationStatus any openings
-GetMyLocationStatus any holes
+GetMyLocationStatus any bikes
 GetMyLocationStatus if there are any bikes available
+GetMyLocationStatus if there are bikes available
 GetMyLocationStatus if there are any spaces available
+GetMyLocationStatus if there are spaces available
 GetMyLocationStatus if there is a bike available
 GetMyLocationStatus if there is a space available
 GetMyLocationStatus how makes bikes area available
 GetMyLocationStatus how makes spaces area available
 
 
-SetMyLocationById Set my location to id {one|Id}
-SetMyLocationById Set my location to id {two|Id}
-SetMyLocationById Set my location to id {four hundred and ten|Id}
-SetMyLocationById Set my location to id {four hundred ten|Id}
-SetMyLocationById My location id is {one|Id}
-SetMyLocationById My location id is {two|Id}
-SetMyLocationById My location id is {four hundred and ten|Id}
-SetMyLocationById My location id is {four hundred ten|Id}
-SetMyLocationById configure my station id to {one|Id}
-SetMyLocationById configure my station id to {two|Id}
-SetMyLocationById configure my station id to {three|Id}
-SetMyLocationById set my station to id {three|Id}
-SetMyLocationById set my station to id {one|Id}
-SetMyLocationById setup my station id to {one|Id}
-SetMyLocationById set my home station id to {one|Id}
-SetMyLocationById set my station id to {one|Id}
+SetMyLocationById Set my location to id {Id}
+SetMyLocationById Set my location to id {Id}
+SetMyLocationById Set my location to id {Id}
+SetMyLocationById Set my location to id {Id}
+SetMyLocationById My location id is {Id}
+SetMyLocationById My location id is {Id}
+SetMyLocationById My location id is {Id}
+SetMyLocationById My location id is {Id}
+SetMyLocationById configure my station id to {Id}
+SetMyLocationById configure my station id to {Id}
+SetMyLocationById configure my station id to {Id}
+SetMyLocationById set my station to id {Id}
+SetMyLocationById set my station to id {Id}
+SetMyLocationById setup my station id to {Id}
+SetMyLocationById set my home station id to {Id}
+SetMyLocationById set my station id to {Id}
 
-GetSpecificLocationStatusById what is the status of location id {one|Id}
-GetSpecificLocationStatusById what is the situation at location id {one|Id}
-GetSpecificLocationStatusById how many bikes are available at station id {one|Id}
-GetSpecificLocationStatusById station {one|Id} status please
-GetSpecificLocationStatusById station {one|Id} status
-GetSpecificLocationStatusById station {one|Id} situation
-GetSpecificLocationStatusById bikes at station id {one|Id}
-GetSpecificLocationStatusById spaces at station id {one|Id}
+SetMyLocationByLocation use {one five nine Howard Street|Location} as my location
+SetMyLocationByLocation use {one three ninety nine Howard Street|Location} as my location
+SetMyLocationByLocation use {Howard and Taft|Location} as my location
+SetMyLocationByLocation use {Shedd Aquarium|Location} as my location
+SetMyLocationByLocation use {Lake Drive and Fuller Avenue|Location} as my location
 
 GetSpecificLocationStatusByLocation if bikes are available at {Howard and Kedzie|Location}
 GetSpecificLocationStatusByLocation if a bike is available at {Howard and Kedzie|Location}
