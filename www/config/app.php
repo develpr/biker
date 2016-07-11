@@ -156,6 +156,15 @@ return [
         Biker\Providers\EventServiceProvider::class,
         Biker\Providers\RouteServiceProvider::class,
 
+
+        /*
+         * Application Service Providers...
+         */
+        Biker\Providers\AppServiceProvider::class,
+        Biker\Providers\EventServiceProvider::class,
+        Biker\Providers\RouteServiceProvider::class,
+
+
         Develpr\AlexaApp\Provider\LaravelServiceProvider::class,
 
     ],
