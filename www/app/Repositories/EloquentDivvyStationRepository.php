@@ -2,7 +2,7 @@
 
 use Biker\Contracts\Repositories\DivvyStationRepository;
 use Biker\Domain\Divvy\EloquentStation;
-use Biker\Domain\Divvy\Station;
+use Biker\Contracts\Station;
 use Illuminate\Config\Repository as Config;
 
 class EloquentDivvyStationRepository implements DivvyStationRepository{
