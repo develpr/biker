@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>@yield('title', "Hello!") | Alexa, Find Me A Bike</title>
 	<link href='https://fonts.googleapis.com/css?family=Euphoria+Script' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="/css/master.css">
 	<!--[if IE]>
 	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
