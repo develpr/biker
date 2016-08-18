@@ -15,26 +15,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-AlexaRoute::launch('/alexa', 'Biker\Http\Controllers\Biker@handleLaunch');
 
-AlexaRoute::sessionEnded('/alexa', 'Biker\Http\Controllers\Biker@handleSessionEnded');
+AlexaRoute::group(['middleware' => \Biker\Http\Middleware\AlexaAuth::class], function () {
 
-AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'Biker\Http\Controllers\Biker@findById');
+    AlexaRoute::launch('/alexa', 'Biker\Http\Controllers\Biker@handleLaunch');
 
-AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'Biker\Http\Controllers\Biker@findByLocation');
+    AlexaRoute::sessionEnded('/alexa', 'Biker\Http\Controllers\Biker@handleSessionEnded');
 
-AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'Biker\Http\Controllers\Biker@myLocationStatus');
+    AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusById', 'Biker\Http\Controllers\Biker@findById');
 
-AlexaRoute::intent('/alexa', 'SetMyLocationById', 'Biker\Http\Controllers\Biker@setLocationId');
+    AlexaRoute::intent('/alexa', 'GetSpecificLocationStatusByLocation', 'Biker\Http\Controllers\Biker@findByLocation');
 
-AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'Biker\Http\Controllers\Biker@setByLocation');
+    AlexaRoute::intent('/alexa', 'GetMyLocationStatus', 'Biker\Http\Controllers\Biker@myLocationStatus');
 
-AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'Biker\Http\Controllers\Biker@getDeviceCode');
+    AlexaRoute::intent('/alexa', 'SetMyLocationById', 'Biker\Http\Controllers\Biker@setLocationId');
 
-AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'Biker\Http\Controllers\Biker@resetDeviceCode');
+    AlexaRoute::intent('/alexa', 'SetMyLocationByLocation', 'Biker\Http\Controllers\Biker@setByLocation');
 
-AlexaRoute::intent('/alexa', 'ResetAccount', 'Biker\Http\Controllers\Biker@detachAccount');
-AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'Biker\Http\Controllers\Biker@confirmDetachAccount');
+    AlexaRoute::intent('/alexa', 'GetMyDeviceCode', 'Biker\Http\Controllers\Biker@getDeviceCode');
+
+    AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'Biker\Http\Controllers\Biker@resetDeviceCode');
+
+    AlexaRoute::intent('/alexa', 'ResetAccount', 'Biker\Http\Controllers\Biker@detachAccount');
+
+    AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'Biker\Http\Controllers\Biker@confirmDetachAccount');
+
+});
+
 
 Route::get('setup', 'Auth\AuthController@getSetup');
 
@@ -42,12 +49,3 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => 'alexa-auth'], function () {
-
-    Route::post('/test', function(){
-        $test = "HI";
-
-        return "OK";
-    });
-
-});

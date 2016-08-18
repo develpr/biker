@@ -3,7 +3,6 @@
 use Develpr\AlexaApp\Response\Card;
 use Biker\Contracts\GeocodingService;
 use Biker\Contracts\Repositories\DivvyStationRepository;
-use Biker\Device;
 use Biker\Contracts\Station;
 use Biker\Services\Data\DivvyImporter;
 use Illuminate\Routing\Controller as BaseController;
@@ -31,10 +30,6 @@ class Biker extends  BaseController{
 	 * Handle the launch event for the app
 	 */
 	public function handleLaunch(){
-		$device = $this->retrieveOrCreateDevice();
-		if( $device->station ){
-			return Alexa::say("Welcome to Bike Finder. You can get information for your home station, or find information about a different bike station. What would you like to do?");
-		}
 		return Alexa::say("Welcome to Bike Finder. You can get information about a station using a location or ID, or setup your home station. What would you like to do?");
 	}
 
@@ -58,13 +53,11 @@ class Biker extends  BaseController{
 
 	public function setByLocation(){
 		$station = $this->findStationFromLocation();
-		$device = $this->retrieveOrCreateDevice();
 
 		if( ! $station ){
 			return Alexa::say("I can't find a station near that location. You could try providing a different street intersection, address, or popular destination.");
 		}
 		else{
-			$device->station()->associate($station)->save();
 			return Alexa::say("I found the " . $station->getSpokenName() . " station which is " . $this->getSpokenDistance($station->distance) . " away and set it as your home station.");
 		}
 	}
@@ -93,20 +86,11 @@ class Biker extends  BaseController{
 	}
 
 	public function myLocationStatus(){
-		$device = $this->retrieveOrCreateDevice();
-
-		if( ! $device->station ){
 			return Alexa::say("It doesn't look like you have a home station setup. Which station would you like to be your home station?");
-		}
-		else{
-			return Alexa::say($device->station->getFullSpokenStatus())->endSession();
-		}
 
 	}
 
 	public function setLocationId(){
-		/** @var  $device */
-		$device = $this->retrieveOrCreateDevice();
 		$id = intval(Alexa::slot('Id'));
 
 		$station = $this->stationRepository->findByStationId($id);
@@ -115,65 +99,7 @@ class Biker extends  BaseController{
 			return Alexa::say("I can't find a station with that ID. Try again, or use the station location instead.");
 		}
 		else{
-			$device->station()->associate($station)->save();
 			return Alexa::say("I've set the " . $station->getSpokenName() . " station as your home station.");
-		}
-	}
-
-	/**
-	 * @return \Develpr\AlexaApp\Contracts\AmazonEchoDevice|Device|null
-	 */
-	private function retrieveOrCreateDevice(){
-		$device = Alexa::device();
-
-		if( ! $device ){
-			$device = new Device;
-			$device->setDeviceId(\Alexa::request()->getUserId());
-			$device->save();
-		}
-
-		return $device;
-	}
-
-	public function getDeviceCode(){
-		$device = $this->retrieveOrCreateDevice();
-
-		return Alexa::say("Your device's code for web registration is " . $this->getSpokenDeviceCode($device->device_code) . '. You reset this code at any time by saying, "reset my device code."')
-			->withCard(new Card("Your Web Device Code", "", "Your code for web registration is " . $device->device_code))
-			->endSession();
-	}
-
-	public function resetDeviceCode(){
-		$device = $this->retrieveOrCreateDevice();
-		$device->generateDeviceCode()->save();
-
-		return Alexa::say("The code for you device has been reset and is now " . $this->getSpokenDeviceCode($device->device_code) . '.')->endSession();
-	}
-
-	public function detachAccount(){
-		$device = $this->retrieveOrCreateDevice();
-
-		if(! $device->user ){
-			return Alexa::say("There is no user account associated with this device currently")->endSession();
-		}
-		else{
-			return Alexa::ask("Are you sure you want to disconnect this device from it's web account?")->sendResponseTo('ConfirmDetachAccount');
-		}
-	}
-
-	public function confirmDetachAccount(){
-		$response = strtolower(trim(Alexa::slot('PromptResponse')));
-
-		if($response == "yes" || $response == "sure" || $response === 1){
-			$device = $this->retrieveOrCreateDevice();
-			/** @var Device $device */
-			$device->user()->dissociate();
-			$device->generateDeviceCode();
-			$device->save();
-			return Alexa::say("Your device is no longer associated with a web account")->endSession();
-		}
-		else{
-			return Alexa::say("I'll leave things as they are.")->endSession();
 		}
 	}
 

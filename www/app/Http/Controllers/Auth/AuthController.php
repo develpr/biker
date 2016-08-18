@@ -79,7 +79,7 @@ class AuthController extends Controller
         return User::create([
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'api_token' => bcrypt(rand(1, 999999)),
+            'alexa_token' => bcrypt(rand(1, 999999)),
         ]);
     }
 }

@@ -201,7 +201,7 @@ return [
 		| as long as it implements the AmazonEchoDevice contract.
 		|
 		*/
-		'model' => env('ALEXA_ELOQUENT_DEVICE_MODEL', Biker\Device::class),
+		'model' => env('ALEXA_ELOQUENT_DEVICE_MODEL', Biker\User::class),
 
 		/*
 		|--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ return [
 		| eloquent or database providers.
 		|
 		*/
-		'device_identifier' => env('ALEXA_DEVICE_ID_ATTRIBUTE', 'device_user_id'),
+		'device_identifier' => env('ALEXA_DEVICE_ID_ATTRIBUTE', 'id'),
 
 	],
 

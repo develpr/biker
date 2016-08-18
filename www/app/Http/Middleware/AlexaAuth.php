@@ -2,6 +2,7 @@
 
 namespace Biker\Http\Middleware;
 
+use Biker\User;
 use Closure;
 use Alexa;
 use Develpr\AlexaApp\Response\Card;
@@ -23,8 +24,17 @@ class AlexaAuth
                 ->withCard(new Card('Link Account', 'Please Link Your Account', '', Card::LINK_ACCOUNT_CARD_TYPE));
             return response($test);
         }
-        \Auth::once(['alexa_token' => $accessToken]);
         
+        $user = \Biker\User::where(['alexa_token' => $accessToken])->first();
+       
+        if( ! $user ){
+            $test = Alexa::say("Before I can help you check for bikes you'll need to sign into the biker app.")
+                ->withCard(new Card('Link Account', 'Please Link Your Account', '', Card::LINK_ACCOUNT_CARD_TYPE));
+            return response($test);
+        }
+        
+        
+        \Auth::login($user);
         $user = \Auth::user();
 
         return $next($request);
