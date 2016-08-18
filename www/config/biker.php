@@ -18,4 +18,10 @@ return [
     'web' => [
         'device_code_length' => 8,
     ],
+
+    'amazon_account_linking' => [
+        'redirect_url' => env('BIKER_ECHO_REDIRECT_URL', 'http://aredirecturl.site/callbak'),
+        'client_id' => 'alexa-skill-biker',
+    ]
+
 ];

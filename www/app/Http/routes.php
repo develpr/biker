@@ -36,6 +36,7 @@ AlexaRoute::intent('/alexa', 'ResetMyDeviceCode', 'Biker\Http\Controllers\Biker@
 AlexaRoute::intent('/alexa', 'ResetAccount', 'Biker\Http\Controllers\Biker@detachAccount');
 AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'Biker\Http\Controllers\Biker@confirmDetachAccount');
 
+Route::get('setup', 'Auth\AuthController@getSetup');
 
 /**
  *				AUTH

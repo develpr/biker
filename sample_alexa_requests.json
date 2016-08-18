@@ -1,0 +1,69 @@
+{
+  "intent": {
+    "version": "1.0",
+    "session": {
+      "new": true,
+      "sessionId": "amzn1.echo-api.session.a9e2425a-5a23-4ef8-a097-fba2cfd49000",
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.61c03a4a-b537-4c91-b1c3-dad771abc1c4"
+      },
+      "user": {
+        "userId": "amzn1.account.AGMF5V2AWR32DNSU7ZZETAU4BNAQ"
+      }
+    },
+    "request": {
+      "type": "LaunchRequest",
+      "requestId": "amzn1.echo-api.request.8d63e5ce-7164-48ef-924b-71f8ad52d8df",
+      "timestamp": "2016-07-10T23:58:25Z",
+      "locale": "en-US"
+    }
+  },
+  "end": {
+    "version": "1.0",
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.a9e2425a-5a23-4ef8-a097-fba2cfd49000",
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.61c03a4a-b537-4c91-b1c3-dad771abc1c4"
+      },
+      "user": {
+        "userId": "amzn1.account.AGMF5V2AWR32DNSU7ZZETAU4BNAQ"
+      }
+    },
+    "request": {
+      "type": "SessionEndedRequest",
+      "requestId": "amzn1.echo-api.request.5dde912b-7010-4a2b-b081-9467810fa012",
+      "timestamp": "2016-07-10T23:58:25Z",
+      "locale": "en-US",
+      "reason": "ERROR"
+    }
+  },
+  "set_station_id": {
+    "version":"1.0",
+    "session":{
+      "new":true,
+      "sessionId":"amzn1.echo-api.session.4d80b835-45f4-4424-991c-0f69efad5dae",
+      "application":{
+        "applicationId":"amzn1.echo-sdk-ams.app.61c03a4a-b537-4c91-b1c3-dad771abc1c4"
+      },
+      "user":{
+        "userId":"amzn1.account.AGMF5V2AWR32DNSU7ZZETAU4BNAQ"
+      }
+    },
+    "request":{
+      "type":"IntentRequest",
+      "requestId":"amzn1.echo-api.request.06bb6666-5196-4c8c-948d-23ecace1562d",
+      "timestamp":"2016-07-11T01:53:10Z",
+      "locale":"en-US",
+      "intent":{
+        "name":"SetMyLocationById",
+        "slots":{
+          "Id":{
+            "name":"Id",
+            "value":"5"
+          }
+        }
+      }
+    }
+  }
+}

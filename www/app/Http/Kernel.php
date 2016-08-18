@@ -29,11 +29,14 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Biker\Http\Middleware\VerifyCsrfToken::class,
+            \Develpr\AlexaApp\Http\Middleware\Certificate::class,
         ],
 
         'api' => [
             'throttle:60,1',
+            \Develpr\AlexaApp\Http\Middleware\Certificate::class,
         ],
+
     ];
 
     /**

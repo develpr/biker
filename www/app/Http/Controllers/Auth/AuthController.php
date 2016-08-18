@@ -40,6 +40,20 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+    public function getSetup()
+    {
+        $user = \Auth::user();
+
+        //http://biker.dev/setup?state=thestatehere&client_id=alexa-app-biker&response_type=token&scope=optionscopestuff
+        //@see: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/linking-an-alexa-user-with-a-user-in-your-system
+        $state = \Request::get('state');
+        $scope = \Request::get('scope');
+        $clientId = \Request::get('client_id');
+        $responseType = \Request::get('response_type');
+        return view('auth.setup', ['state' => $state]);
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,7 +63,6 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -64,9 +77,9 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'api_token' => bcrypt(rand(1, 999999)),
         ]);
     }
 }
