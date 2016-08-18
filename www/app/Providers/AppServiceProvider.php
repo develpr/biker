@@ -1,8 +1,8 @@
-<?php namespace Biker\Providers;
+<?php
 
-use Biker\Device;
+namespace Biker\Providers;
+
 use Illuminate\Support\ServiceProvider;
-use Biker\Validators\DeviceCodeValidator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,9 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerEloquentListeners();
-        $this->registerValidators();
-        $this->registerErrorHandlers();
+        //
     }
 
     /**
@@ -32,21 +30,6 @@ class AppServiceProvider extends ServiceProvider
         foreach ($this->simpleBindings as $contract => $service) {
             $this->app->bind($contract, $service);
         }
-    }
-
-    private function registerErrorHandlers(){
-    }
-
-    private function registerEloquentListeners()
-    {
-        Device::creating(function (Device $device) {
-            $device->generateDeviceCode();
-            return true;
-        });
-    }
-
-    private function registerValidators()
-    {
-        \Validator::extend('device_code', DeviceCodeValidator::class . '@validate');
+        //
     }
 }

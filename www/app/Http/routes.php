@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 AlexaRoute::launch('/alexa', 'Biker\Http\Controllers\Biker@handleLaunch');
@@ -38,25 +38,16 @@ AlexaRoute::intent('/alexa', 'ConfirmDetachAccount', 'Biker\Http\Controllers\Bik
 
 Route::get('setup', 'Auth\AuthController@getSetup');
 
-/**
- *				AUTH
- */
-// Authentication routes...
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', 'Auth\AuthController@getLogout');
+Route::auth();
 
-// Registration routes...
-Route::get('register', 'Auth\AuthController@getRegister');
-Route::post('register', 'Auth\AuthController@postRegister');
+Route::get('/home', 'HomeController@index');
 
-// Password reset link request routes...
-Route::get('password/email', 'Auth\PasswordController@getEmail');
-Route::post('password/email', 'Auth\PasswordController@postEmail');
+Route::group(['middleware' => 'alexa-auth'], function () {
 
-// Password reset routes...
-Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');
+    Route::post('/test', function(){
+        $test = "HI";
 
+        return "OK";
+    });
 
-
+});

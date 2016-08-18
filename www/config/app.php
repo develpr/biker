@@ -156,19 +156,8 @@ return [
         Biker\Providers\EventServiceProvider::class,
         Biker\Providers\RouteServiceProvider::class,
 
-
-        /*
-         * Application Service Providers...
-         */
-        Biker\Providers\AppServiceProvider::class,
-        Biker\Providers\EventServiceProvider::class,
-        Biker\Providers\RouteServiceProvider::class,
-
-
         Develpr\AlexaApp\Provider\LaravelServiceProvider::class,
-
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
     ],
 
     /*
@@ -219,6 +208,10 @@ return [
         'AlexaRoute' => \Develpr\AlexaApp\Facades\AlexaRouter::class,
         'Alexa' => \Develpr\AlexaApp\Facades\Alexa::class,
 
+
+        //jwt
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

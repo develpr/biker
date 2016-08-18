@@ -17,8 +17,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->rememberToken();
+            $table->integer('station_id')->nullable(); //the users home station
             $table->string('api_token', 60)->unique();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
